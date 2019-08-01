@@ -19,6 +19,8 @@ app.get("/", function (req, res) {
 });
 
 
+app.set('trust proxy', true);
+
  app.use(function(req, res, next){
    res.json({"ipaddress": req.ip, "language": req.get("Accept-Language"), "software": req.get("User-Agent")});
    next();
